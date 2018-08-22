@@ -115,3 +115,5 @@ LOGGING = {
         },
     },
 }
+
+SCOUT_NAME = SCOUT_NAME + " [PROD]"

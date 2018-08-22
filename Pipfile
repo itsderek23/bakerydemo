@@ -28,6 +28,7 @@ aws-requests-auth = "==0.4.0"
 django-redis = "==4.8.0"
 django-cache-url = "==2.0.0"
 awscli = "==1.11.23"
+scout-apm = "*"
 
 
 [requires]

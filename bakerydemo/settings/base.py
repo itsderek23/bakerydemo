@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'scout_apm.django', # should be listed first
     'bakerydemo.base',
     'bakerydemo.blog',
     'bakerydemo.breads',
@@ -177,3 +178,7 @@ WAGTAILSEARCH_BACKENDS = {
 
 # Wagtail settings
 WAGTAIL_SITE_NAME = "bakerydemo"
+
+# Scout settings
+SCOUT_MONITOR = True
+SCOUT_NAME    = WAGTAIL_SITE_NAME

@@ -1,0 +1,12 @@
+http://127.0.0.1:8000/breads/
+http://127.0.0.1:8000/
+http://127.0.0.1:8000/breads/anpan/
+http://127.0.0.1:8000/blog/
+http://127.0.0.1:8000/blog/icelandic-baking/
+http://127.0.0.1:8000/blog/wild-yeast/
+http://127.0.0.1:8000/blog/desserts-benefits/
+http://127.0.0.1:8000/gallery/
+http://127.0.0.1:8000/contact-us/
+http://127.0.0.1:8000/search/?q=bread
+http://127.0.0.1:8000/locations/wellington/
+http://127.0.0.1:8000/search/?q=flour
