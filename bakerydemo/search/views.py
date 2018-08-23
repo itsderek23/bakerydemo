@@ -9,11 +9,17 @@ from bakerydemo.blog.models import BlogPage
 from bakerydemo.breads.models import BreadPage
 from bakerydemo.locations.models import LocationPage
 
+import requests
+
 
 def search(request):
     # Search
     search_query = request.GET.get('q', None)
     if search_query:
+        # Sample slow HTTP call
+        r = requests.get('https://cnn.com')
+
+
         if 'elasticsearch' in settings.WAGTAILSEARCH_BACKENDS['default']['BACKEND']:
             # In production, use ElasticSearch and a simplified search query, per
             # http://docs.wagtail.io/en/v1.12.1/topics/search/backends.html
