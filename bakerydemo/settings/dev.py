@@ -9,6 +9,9 @@ BASE_URL = 'http://localhost:8000'
 
 SCOUT_NAME = SCOUT_NAME + " [DEV]"
 
+from scout_apm.api import Config
+Config.set(revision_sha = os.popen("git rev-parse HEAD").read())
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
