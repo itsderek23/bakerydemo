@@ -10,6 +10,8 @@ from bakerydemo.breads.models import BreadPage
 from bakerydemo.locations.models import LocationPage
 
 import requests
+import scout_apm.api
+
 
 
 def search(request):
@@ -50,14 +52,15 @@ def search(request):
         search_results = Page.objects.none()
 
     # Pagination
-    page = request.GET.get('page', 1)
-    paginator = Paginator(search_results, 10)
-    try:
-        search_results = paginator.page(page)
-    except PageNotAnInteger:
-        search_results = paginator.page(1)
-    except EmptyPage:
-        search_results = paginator.page(paginator.num_pages)
+    with scout_apm.api.instrument("pagination") as instrument:
+        page = request.GET.get('page', 1)
+        paginator = Paginator(search_results, 10)
+        try:
+            search_results = paginator.page(page)
+        except PageNotAnInteger:
+            search_results = paginator.page(1)
+        except EmptyPage:
+            search_results = paginator.page(paginator.num_pages)
 
     return render(request, 'search/search_results.html', {
         'search_query': search_query,
