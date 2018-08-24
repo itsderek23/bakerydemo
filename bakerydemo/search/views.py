@@ -15,6 +15,9 @@ import scout_apm.api
 
 
 def search(request):
+    # Trigger exception
+    # Page.objects.dead()
+
     # Search
     search_query = request.GET.get('q', None)
     if search_query:

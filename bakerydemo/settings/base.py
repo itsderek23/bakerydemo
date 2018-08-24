@@ -79,7 +79,7 @@ MIDDLEWARE = [
 
     'wagtail.core.middleware.SiteMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
-
+    'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
 ]
 
 ROOT_URLCONF = 'bakerydemo.urls'
@@ -182,3 +182,8 @@ WAGTAIL_SITE_NAME = "bakerydemo"
 # Scout settings
 SCOUT_MONITOR = True
 SCOUT_NAME    = WAGTAIL_SITE_NAME
+
+ROLLBAR = {
+    'branch': 'master',
+    'root': '/~/projects/play/bakerydemo'
+}
