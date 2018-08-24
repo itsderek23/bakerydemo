@@ -62,6 +62,9 @@ def search(request):
         except EmptyPage:
             search_results = paginator.page(paginator.num_pages)
 
+    scout_apm.api.Context.add("search_query",search_query)
+    scout_apm.api.Context.add("search_results_size",len(search_results))
+
     return render(request, 'search/search_results.html', {
         'search_query': search_query,
         'search_results': search_results,
